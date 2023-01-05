@@ -1,10 +1,10 @@
-/* UC2- Ability to create Linked List by adding 30 and 56 to 70
-        - Node with data 70 is First Created
-        - Next 30 is added to 70
-        - Finally 56 is added to 30
-        - LinkedList Sequence: 56->30->70*/
+/* UC3- Ability to create Linked List by appending 30 and 70 to 56
+        - Node with data 56 is First Created
+        - Next Append 30 to 56
+        - Finally Append 70 to 30
+        - LinkedList Sequence: 56->30->70 */
 
-public class Node {
+class Node {
     public int data;
     public Node next;
 
@@ -32,10 +32,22 @@ class LinkedList {
         }
     }
 
-    //Display Node in Linked List
+    //data insertion from last node
+    public void insertLast(int data) {
+        Node newNode = new Node(data);
+        if (tail == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+        }
+    }
+
+    // displaying Node in Linked List
     public void showLinkedList() {
         if (head == null) {
-            System.out.println("Linked List is Empty.");
+            System.out.println("Linked List Sequence is Empty");
         } else {
             Node temp = head;
             while (temp != null) {
