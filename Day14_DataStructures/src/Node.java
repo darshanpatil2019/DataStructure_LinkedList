@@ -1,7 +1,6 @@
-/* UC6- Ability to delete the last element in the LinkedList of sequence 56->30->70
-        - Write popLast method
-        - Note there is new tail
-        - Final Sequence: 56->30 */
+/* UC7- Ability to search LinkedList to find Node with value 30
+       - Write Junit Test Case as demonstrated in class
+       - Loop through LinkedList to find node with key 30 */
 
 class Node {
     public int data;
@@ -99,6 +98,25 @@ class LinkedList {
             while (second_Last.next.next != null)
                 second_Last = second_Last.next;
             second_Last.next = null;
+        }
+    }
+
+    // searching the particular given Node in Linked List sequence
+    public void searchNode(int data) {
+        int nodeLocationFound = 1;
+
+        if (head == null) {
+            System.out.println("Linked List is Empty");
+        } else {
+
+            Node temp = head;
+            while (temp != null) {
+                if (temp.data == data) {
+                    System.out.println("Node found at Location : " + nodeLocationFound);
+                }
+                nodeLocationFound++;
+                temp = temp.next;
+            }
         }
     }
 }
