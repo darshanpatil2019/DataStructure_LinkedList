@@ -1,19 +1,41 @@
+import java.util.Scanner;
+
 public class MyLinkedList {
     public static void main(String[] args) {
         System.out.println("Welcome to LinkedList Data Structure Problem using Java Generics");
-
+        Scanner sc = new Scanner((System.in));
         LinkedList linkedList = new LinkedList();
+        int choice;
 
-       /* linkedList.insertFirst(70);  // insert 70 in LinkedList
-        linkedList.insertFirst(30);  // insert 50 in LinkedList
-        linkedList.insertFirst(56);  // insert 36 in LinkedList*/
+        do {
+            System.out.println();
+            System.out.println("Choices for a simple linked list");
+            System.out.println("1.Insert First \n2.Insert Last \n3.Insert at Nth position \n4.Display LinkedList  \n5.Exit from the List \nEnter the Choices: ");
+            choice = sc.nextInt();
 
-        linkedList.insertLast(70);  // insert 70 in LinkedList from last
-        linkedList.insertLast(30);  // insert 50 after 70 in LinkedList from last
-        linkedList.insertLast(56);  // insert 36 after 50 in LinkedList from last
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter data to insert at First Node: ");
+                    int dataFirst = sc.nextInt();
+                    linkedList.insertFirst(dataFirst);
+                    break;
+                case 2:
+                    System.out.println("Enter Data to insert at Last Node: ");
+                    int dataLast = sc.nextInt();
+                    linkedList.insertLast(dataLast);
+                    break;
+                case 3:
+                    System.out.println("Enter the Data After which to Insert New Data : ");
+                    int nthData = sc.nextInt();
+                    System.out.println("Enter the Data : ");
+                    int data = sc.nextInt();
+                    linkedList.insertNthPosition(data, nthData);
+                    break;
+                case 4:
+                    linkedList.showLinkedList();
+                    break;
 
-
-        linkedList.showLinkedList();  //showing added data in Linked List
+            }
+        } while (choice != 5);
     }
 }
-

@@ -1,8 +1,5 @@
-/* UC3- Ability to create Linked List by appending 30 and 70 to 56
-        - Node with data 56 is First Created
-        - Next Append 30 to 56
-        - Finally Append 70 to 30
-        - LinkedList Sequence: 56->30->70 */
+/* UC4-Ability to insert 30 between 56 and 70
+- Final Sequence: 56->30->70 */
 
 class Node {
     public int data;
@@ -18,6 +15,7 @@ class Node {
 class LinkedList {
     Node head;
     Node tail;
+    int location = 0;
 
     // now inserting data in new Node
     public void insertFirst(int data) {
@@ -30,6 +28,8 @@ class LinkedList {
             newNode.next = head;
             head = newNode;
         }
+        location++;
+        System.out.println("Location:" + location);
     }
 
     //data insertion from last node
@@ -41,6 +41,28 @@ class LinkedList {
         } else {
             tail.next = newNode;
             tail = newNode;
+        }
+        location++;
+        System.out.println("Location:" + location);
+    }
+
+    //Insert New Node after Given Node
+    public void insertNthPosition(int data, int nthData) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            Node temp = head;
+            Node nextNode;
+            while (temp != null) {
+                nextNode = temp.next;
+                if (temp.data == nthData) {
+                    temp.next = newNode;
+                    newNode.next = nextNode;
+                }
+                temp = temp.next;
+            }
         }
     }
 
