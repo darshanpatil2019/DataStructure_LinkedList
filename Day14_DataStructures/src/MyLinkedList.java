@@ -10,7 +10,7 @@ public class MyLinkedList {
 
         do {
             System.out.println("Choices for a simple linked list");
-            System.out.println("1.Insert First \n2.Insert Last \n3.Insert at Nth position \n4.Display LinkedList  \n5.pop \n6.pop last \n7.Search Node \n8.Exit \nEnter the Choices: ");
+            System.out.println("1.Insert First \n2.Insert Last \n3.Insert at Nth position \n4.Display LinkedList  \n5.pop \n6.pop last \n7.Search Node \n8.Insert After Node \n9.Exit \nEnter the Choices: ");
             choice = sc.nextInt();
 
             switch (choice) {
@@ -44,8 +44,13 @@ public class MyLinkedList {
                     System.out.println("Enter the Data to Search in the Linked List sequence: ");
                     linkedList.searchNode(sc.nextInt());
                     break;
+                case 8:
+                    System.out.println("Enter the Data After which to Insert New Data : ");
+                    int nthData2 = sc.nextInt();
+                    System.out.println("Enter the Data : ");
+                    linkedList.insertAtLocation(sc.nextInt(), nthData2);
             }
         }
-        while (choice != 8);
+        while (choice != 9);
     }
 }
