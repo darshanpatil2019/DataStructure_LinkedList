@@ -1,5 +1,6 @@
-/* UC4-Ability to insert 30 between 56 and 70
-- Final Sequence: 56->30->70 */
+/* UC5-Ability to delete the first element in the LinkedList of sequence 56->30->70 - Write pop method
+        - Note there is new head
+        - Final Sequence: 30->70 */
 
 class Node {
     public int data;
@@ -17,7 +18,7 @@ class LinkedList {
     Node tail;
     int location = 0;
 
-    // now inserting data in new Node
+    // now inserting data in new Node from first node
     public void insertFirst(int data) {
         Node newNode = new Node(data);
         //Adding Data in Node
@@ -32,7 +33,7 @@ class LinkedList {
         System.out.println("Location:" + location);
     }
 
-    //data insertion from last node
+    // data insertion from last node
     public void insertLast(int data) {
         Node newNode = new Node(data);
         if (tail == null) {
@@ -46,7 +47,7 @@ class LinkedList {
         System.out.println("Location:" + location);
     }
 
-    //Insert New Node after Given Node
+    // insert a new Node after(between) given Node at nth position
     public void insertNthPosition(int data, int nthData) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -76,6 +77,15 @@ class LinkedList {
                 System.out.print(temp.data + " -> ");
                 temp = temp.next;
             }
+        }
+    }
+
+    //delete First Node from Linked List sequence
+    public void pop() {
+        if (head == null) {
+            System.out.println("Linked List sequence is Empty");
+        } else {
+            head = head.next;
         }
     }
 }
