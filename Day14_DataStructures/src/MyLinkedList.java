@@ -10,7 +10,7 @@ public class MyLinkedList {
 
         do {
             System.out.println("Choices for a simple linked list");
-            System.out.println("1.Insert First \n2.Insert Last \n3.Insert at Nth position \n4.Display LinkedList  \n5.pop \n6.pop last \n7.Search Node \n8.Insert After Node \n9.Exit \nEnter the Choices: ");
+            System.out.println("1.Insert First \n2.Insert Last \n3.Insert at Nth position \n4.Display LinkedList  \n5.pop \n6.pop last \n7.Search Node \n8.Insert After Node \n9.Delete Node \n10.Exit \nEnter the Choices: ");
             choice = sc.nextInt();
 
             switch (choice) {
@@ -49,8 +49,13 @@ public class MyLinkedList {
                     int nthData2 = sc.nextInt();
                     System.out.println("Enter the Data : ");
                     linkedList.insertAtLocation(sc.nextInt(), nthData2);
+                    break;
+                case 9:
+                    System.out.println("Enter the Node to Delete from Linked List : ");
+                    linkedList.deleteNode(sc.nextInt());
+                    break;
             }
         }
-        while (choice != 9);
+        while (choice != 10);
     }
 }
