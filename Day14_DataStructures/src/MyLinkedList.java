@@ -5,6 +5,7 @@ public class MyLinkedList {
         System.out.println("Welcome to LinkedList Data Structure Problem using Java Generics");
         Scanner sc = new Scanner((System.in));
         LinkedList linkedList = new LinkedList();
+
         int choice;
 
         do {
@@ -36,8 +37,11 @@ public class MyLinkedList {
                 case 5:
                     linkedList.pop();
                     break;
-
+                case 6:
+                    linkedList.popLast();
+                    break;
             }
-        } while (choice != 6);
+        }
+        while (choice != 7);
     }
 }
